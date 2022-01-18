@@ -1,0 +1,11 @@
+class Solution {
+    public boolean isValid(String s) {
+        //我让他每次都循环s的长度次，每次都减，如果没有错误的就一定能减完，理论上还能找出最优的循环次数，碍于时间问题，没空想了
+        int length = s.length();
+        for (int i = 0; i < length; i++) {
+            s = s.replace("()", "").replace("{}", "").replace("[]", "");
+        }
+        //如果最后是空字符串，那就说明没有错误
+        return s.length() == 0;
+    }
+}
